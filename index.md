@@ -1,37 +1,84 @@
-## Welcome to GitHub Pages
+# Boom Menu
 
-You can use the [editor on GitHub](https://github.com/RegNex/boom_menu/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Usage
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The BoomMenu widget is built to be placed in the `Scaffold.floatingActionButton` argument, replacing the `FloatingActionButton` widget.
+It's not possible to set its position with the `Scaffold.floatingActionButtonLocation` argument, but it's possible to set right/bottom margin with the `marginRight` and `marginBottom` arguments (default to 16) to place the button anywhere in the screen.
+Using the `Scaffold.bottomNavigationBar` the floating button will be always placed above the bar, so the `BottomAppBar.hasNotch` should be always `false`.
 
-### Markdown
+**Title**
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Every child button can have a `Icon`,`Title`, `SubTitle` which can be customized providing by yourself. If the `Title` parameter is not provided the title will be not rendered.
 
-```markdown
-Syntax highlighted code block
+The package will handle the animation by itself.
 
-# Header 1
-## Header 2
-### Header 3
+![boom_menu.gif](https://raw.githubusercontent.com/RegNex/boom_menu/main/screenshots/boom_menu.gif)
 
-- Bulleted
-- List
+**Example Usage:**
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```dart
+Widget build(BuildContext context) {
+    return Scaffold(
+        floatingActionButton: BoomMenu(
+        animatedIcon: AnimatedIcons.menu_close,
+        animatedIconTheme: const IconThemeData(size: 22.0),
+        child: const Icon(Icons.add),
+        backgroundColor: Colors.orange,
+        onOpen: () => debugPrint('OPENING DIAL'),
+        onClose: () => debugPrint('DIAL CLOSED'),
+        scrollVisible: scrollVisible, //bool
+        overlayColor: Colors.black,
+        overlayOpacity: 0.7,
+        children: [
+          BoomMenuItem(
+            child: const Icon(Icons.add, color: Colors.white),
+            title: "Create Groups",
+            titleColor: Colors.white,
+            subtitle: "You Can create a new group",
+            subTitleColor: Colors.white,
+            backgroundColor: Colors.amber,
+            onTap: () => debugPrint('FIRST CHILD'),
+          ),
+          BoomMenuItem(
+            child: const Icon(Icons.visibility, color: Colors.white),
+            title: "View Groups",
+            titleColor: Colors.white,
+            subtitle: "You Can view your groups",
+            subTitleColor: Colors.white,
+            backgroundColor: Colors.green,
+            onTap: () => debugPrint('SECOND CHILD'),
+          ),
+          BoomMenuItem(
+            child: const Icon(Icons.edit, color: Colors.white),
+            title: "Edit Groups",
+            titleColor: Colors.white,
+            subtitle: "You Can edit a group",
+            subTitleColor: Colors.white,
+            backgroundColor: Colors.blue,
+            onTap: () => debugPrint('THIRD CHILD'),
+          ),
+          BoomMenuItem(
+            child: const Icon(Icons.delete, color: Colors.white),
+            title: "Delete Groups",
+            titleColor: Colors.white,
+            subtitle: "You Can delete a group",
+            subTitleColor: Colors.white,
+            backgroundColor: Colors.indigo,
+            onTap: () => debugPrint('FOURTH CHILD'),
+          )
+        ],
+      ),
+    );
+}
 ```
+## Disclaimer 
+This package is an improvement of [flutter_boom_menu](https://pub.dev/packages/flutter_boom_menu) to support null safety and also multiple platform support (Android, iOS, Windows, MacOS, Linux, Web)
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
+## Issues & Feedback
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/RegNex/boom_menu/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Please file an [issue](https://github.com/RegNex/boom_menu/issues) to send feedback or report a bug. Thank you!
 
-### Support or Contact
+## Contributing
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Every pull request is welcome.
