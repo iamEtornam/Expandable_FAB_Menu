@@ -12,7 +12,7 @@ Every child button can have a `Icon`,`Title`, `SubTitle` which can be customized
 
 The package will handle the animation by itself.
 
-![alt text](https://github.com/RegNex/Expandable_FAB_Menu/blob/master/screenshots/expandable_fab_menu.gif)
+![alt text](https://github.com/iamEtornam/Expandable_FAB_Menu/blob/main/screenshots/expandable_fab_menu.gif?raw=true)
 
 **Example Usage:**
 
