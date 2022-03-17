@@ -78,3 +78,7 @@ Please file an [issue](https://github.com/RegNex/Expandable_FAB_Menu/issues) to 
 ## Contributing
 
 Every pull request is welcome.
+
+## Licensing
+This code is license under MIT License Copyright (c) 2019 ralphnoel13. 
+The codebase have been improved to target all Dart platforms
