@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'animated_child.dart';
 import 'animated_floating_button.dart';
 import 'background_overlay.dart';
-import 'boom_menu_item.dart';
+import 'expandable_fab_menu_item.dart';
 
 /// Builds the Boom Menu
-class BoomMenu extends StatefulWidget {
+class ExpandableFabMenu extends StatefulWidget {
   /// Children buttons, from the lowest to the highest.
-  final List<BoomMenuItem> children;
+  final List<ExpandableFabMenuItem> children;
 
   /// Used to get the button hidden on scroll. See examples for more info.
   final bool scrollVisible;
@@ -62,7 +62,7 @@ class BoomMenu extends StatefulWidget {
   final Color? titleColor;
   final Color? subTitleColor;
 
-   const BoomMenu(
+   const ExpandableFabMenu(
       {Key? key, this.children = const [],
       this.scrollVisible = true,
       this.title,
@@ -93,10 +93,10 @@ class BoomMenu extends StatefulWidget {
       }) : super(key: key);
 
   @override
-  _BoomMenuState createState() => _BoomMenuState();
+  _ExpandableFabMenuState createState() => _ExpandableFabMenuState();
 }
 
-class _BoomMenuState extends State<BoomMenu>
+class _ExpandableFabMenuState extends State<ExpandableFabMenu>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -131,7 +131,7 @@ class _BoomMenuState extends State<BoomMenu>
   }
 
   @override
-  void didUpdateWidget(BoomMenu oldWidget) {
+  void didUpdateWidget(ExpandableFabMenu oldWidget) {
     if (oldWidget.children.length != widget.children.length) {
       _controller.duration = _calculateMainControllerDuration();
     }
@@ -153,7 +153,7 @@ class _BoomMenuState extends State<BoomMenu>
     final singleChildrenTween = 1.0 / widget.children.length;
 
     return widget.children
-        .map((BoomMenuItem child) {
+        .map((ExpandableFabMenuItem child) {
           int index = widget.children.indexOf(child);
 
           var childAnimation = Tween(begin: 0.0, end: 62.0).animate(

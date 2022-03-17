@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Provides data for a speed dial child
-class BoomMenuItem {
+class ExpandableFabMenuItem {
   final Widget child;
   final Color backgroundColor;
   final double? elevation;
@@ -11,7 +11,7 @@ class BoomMenuItem {
   final Color? titleColor;
   final Color? subTitleColor;
 
-  BoomMenuItem(
+  ExpandableFabMenuItem(
       {required this.child,
       required this.title,
       required this.subtitle,

@@ -1,8 +1,8 @@
-# Boom Menu
+# Expandable Fab Menu
 
 ## Usage
 
-The BoomMenu widget is built to be placed in the `Scaffold.floatingActionButton` argument, replacing the `FloatingActionButton` widget.
+The ExpandableFabMenu widget is built to be placed in the `Scaffold.floatingActionButton` argument, replacing the `FloatingActionButton` widget.
 It's not possible to set its position with the `Scaffold.floatingActionButtonLocation` argument, but it's possible to set right/bottom margin with the `marginRight` and `marginBottom` arguments (default to 16) to place the button anywhere in the screen.
 Using the `Scaffold.bottomNavigationBar` the floating button will be always placed above the bar, so the `BottomAppBar.hasNotch` should be always `false`.
 
@@ -12,14 +12,14 @@ Every child button can have a `Icon`,`Title`, `SubTitle` which can be customized
 
 The package will handle the animation by itself.
 
-![alt text](https://github.com/RegNex/boom_menu/blob/master/screenshots/boom_menu.gif)
+![alt text](https://github.com/RegNex/Expandable_FAB_Menu/blob/master/screenshots/expandable_fab_menu.gif)
 
 **Example Usage:**
 
 ```dart
 Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: BoomMenu(
+        floatingActionButton: ExpandableFabMenu(
         animatedIcon: AnimatedIcons.menu_close,
         animatedIconTheme: const IconThemeData(size: 22.0),
         child: const Icon(Icons.add),
@@ -30,7 +30,7 @@ Widget build(BuildContext context) {
         overlayColor: Colors.black,
         overlayOpacity: 0.7,
         children: [
-          BoomMenuItem(
+          ExpandableFabMenuItem(
             child: const Icon(Icons.add, color: Colors.white),
             title: "Create Groups",
             titleColor: Colors.white,
@@ -39,7 +39,7 @@ Widget build(BuildContext context) {
             backgroundColor: Colors.amber,
             onTap: () => debugPrint('FIRST CHILD'),
           ),
-          BoomMenuItem(
+          ExpandableFabMenuItem(
             child: const Icon(Icons.visibility, color: Colors.white),
             title: "View Groups",
             titleColor: Colors.white,
@@ -48,7 +48,7 @@ Widget build(BuildContext context) {
             backgroundColor: Colors.green,
             onTap: () => debugPrint('SECOND CHILD'),
           ),
-          BoomMenuItem(
+          ExpandableFabMenuItem(
             child: const Icon(Icons.edit, color: Colors.white),
             title: "Edit Groups",
             titleColor: Colors.white,
@@ -57,7 +57,7 @@ Widget build(BuildContext context) {
             backgroundColor: Colors.blue,
             onTap: () => debugPrint('THIRD CHILD'),
           ),
-          BoomMenuItem(
+          ExpandableFabMenuItem(
             child: const Icon(Icons.delete, color: Colors.white),
             title: "Delete Groups",
             titleColor: Colors.white,
@@ -73,7 +73,7 @@ Widget build(BuildContext context) {
 ```
 ## Issues & Feedback
 
-Please file an [issue](https://github.com/RegNex/boom_menu/issues) to send feedback or report a bug. Thank you!
+Please file an [issue](https://github.com/RegNex/Expandable_FAB_Menu/issues) to send feedback or report a bug. Thank you!
 
 ## Contributing
 
